@@ -218,7 +218,7 @@ class RestApiRequestImpl(object):
         return request
 
     def get_accounts(self):
-        request = self.__create_request_by_get_with_signature("/v1/account/accounts")
+        request = self.__create_request_by_get_with_signature("/v1/account/accounts", UrlParamsBuilder())
 
         def parse(json_wrapper):
             account_list = list()
