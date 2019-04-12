@@ -245,7 +245,7 @@ class RequestClient(object):
             if account_type == item.account_type:
                 balances = self.request_impl.get_balance(item)
                 item.balances = balances
-                return item
+                return call_sync(item)
 
     def create_order(self, symbol: 'str', account_type: 'AccountType', order_type: 'OrderType', amount: 'float',
                      price: 'float') -> int:
